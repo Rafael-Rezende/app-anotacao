@@ -1,0 +1,257 @@
+body {
+  background: #E8E8E8;
+}
+
+.cabecalho {
+  background: #032f46;
+  /* width: 100%; */
+}
+
+.cabecalho h1 {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    float: left;
+    margin: 10px 0px;
+}
+
+.cartao {
+  background: #EBEF40;
+  width: 190px;
+  margin: 16px;
+  padding: 16px;
+  flex-grow: 1;
+}
+
+.container {
+  padding: 0 10%;
+}
+
+.cartao-menu-excluir {
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  color: #bd0000;
+  background: white;
+  font-weight: bold;
+  box-shadow: 0px 1px 2px #920404;
+  transition: box-shadow 1s, color 1s, background 1s;
+  cursor: pointer;
+  position: absolute;
+  top: -33px;
+  left: -10px;
+}
+
+.cartao-menu-editar {
+  border-radius: 50px;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  color: #bd0000;
+  background: white;
+  font-weight: bold;
+  box-shadow: 0px 1px 2px #920404;
+  transition: box-shadow 1s, color 1s, background 1s;
+  cursor: pointer;
+  position: absolute;
+  top: -33px;
+  left: 40px;
+}
+
+.cartao-menu-editar:before {
+	content:"\f040";
+	font-family: "FontAwesome";
+}
+
+.cartao-menu-excluir:before {
+	content:'\f00d';
+	font-family: FontAwesome;
+}
+
+.cartao-menu-excluir:hover, .cartao-menu-editar:hover 	{
+  box-shadow: none;
+  color: white;
+  background: red;
+}
+
+.botaoSync {
+	line-height: 0;
+	fill: currentcolor;
+	border-radius: 50%;
+}
+
+@keyframes rodaRodaJequiti {
+	to {
+		transform: rotate(180deg);
+	}
+}
+
+.botaoSync--deuRuim {
+	background: #ED7F6C;
+}
+
+.botaoSync--esperando {
+	animation: rodaRodaJequiti .5s linear infinite;
+}
+
+.botaoSync--sincronizado {
+	background: #39B5AC;
+}
+
+#busca {
+  font-size: 16px;
+  border: none;
+  margin: 18px 29px;
+  background: #eadfdf;
+  padding: 2px 5px;
+}
+
+#busca:focus {
+  background: white;
+}
+
+@media (min-width: 560px) {
+  .cartao {
+    width: 190px;
+    display: inline-block;
+    box-sizing: border-box;
+    text-align: left;
+    position: relative;
+    min-height: 211px;
+    box-shadow: 1px 1px 4px -1px #555;
+  }
+  .mural {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.2rem;
+  }
+  .mural--coluna {
+    flex-direction: column;
+  }
+
+  button#botaoMudaLayout:checked {
+    background: green;
+  }
+
+  #botaoMudaLayout:checked + .botao-layout + .mural {
+    flex-direction: column;
+  }
+  #botaoMudaLayout:checked + .botao-layout + .mural .cartao {
+    flex-basis: auto;
+    width: auto;
+    display: block;
+    width: 100%;
+  }
+  .cartao--some {
+    opacity: 0;
+    transition: all 0.2s linear;
+  }
+  #botaoMudaLayout {
+    visibility: hidden;
+  }
+  .botao-layout {
+    width: 105px;
+    padding: 8px;
+    border-radius: 5px;
+    background: #ebef40;
+    color: #032f46;
+    position: absolute;
+    right: 11%;
+    top: 10px;
+    font-style: italic;
+    font: 16px/16px "Calibri", sans-serif;
+    border: 1px solid #b8cad4;
+    box-shadow: 1px 1px 2px #0082c7;
+    transition: box-shadow 1s;
+    cursor: pointer;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  #botaoMudaLayout:checked + .botao-layout {
+    background: #0e1258;
+    color: white;
+  }
+
+  .botao-layout:hover {
+    box-shadow: none;
+  }
+
+/* CARTOES */
+  .cartao--textoPequeno {
+    font-size: 1em;
+    width: 11em;
+    flex-basis: 11em;
+  }
+
+  .cartao--textoMedio {
+    font-size: 1.5em;
+    width: 9em;
+    flex-basis: 9em;
+  }
+
+  .cartao--textoGrande {
+    font-size: 2em;
+    width: 6em;
+    flex-basis: 6em;
+  }
+
+  button#ajuda {
+    position: absolute;
+    right: 281px;
+    width: 35px;
+    height: 35px;
+    top: 10px;
+    background: #ebef40;
+    border-radius: 50%;
+    box-shadow: 1px 1px 2px #01486d;
+    font-size: 30px;
+    color: #2a926f;
+    cursor: pointer;
+  }
+
+  button#sync {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: 330px;
+    top: 10px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    background: #ebef40;
+    box-shadow: 1px 1px 2px #01486d;
+  }
+  nav.cartao-menu {
+    position: relative;
+  }
+
+  p.cartao-conteudo {
+      margin-top: 35px;
+      max-height: 116px;
+      overflow: hidden;
+  }
+}
+
+#ajuda.opcoesDaPagina-botao:before {
+  content: "\f128";
+  font-family: "FontAwesome";
+}
+
+/* FIM CARTOES */
+
+@media (min-width: 610px) {
+  .mural {
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 900px) {
+  .mural {
+    font-size: 1.3rem;
+    display: flex;
+    justify-content: center;
+  }
+}
