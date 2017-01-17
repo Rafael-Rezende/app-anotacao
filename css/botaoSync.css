@@ -1,0 +1,22 @@
+.botaoSync {
+	line-height: 0;
+	fill: #0082c7;
+}
+
+@keyframes rodaRodaJequiti {
+	to {
+		transform: rotate(180deg);
+	}
+}
+
+.botaoSync--deuRuim {
+	background: #ED7F6C;
+}
+
+.botaoSync--esperando {
+	animation: rodaRodaJequiti .5s linear infinite;
+}
+
+.botaoSync--sincronizado {
+	background: #39B5AC;
+}
